@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:covid_tracker/View/countries_list.dart';
 import 'package:covid_tracker/model/WorldStatesModel.dart';
 import 'package:covid_tracker/services/StatesServices.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,7 @@ class _WorldStatesScreenState extends State<WorldStatesScreen> with TickerProvid
   @override
   void dispose() {
     _controller.dispose();
+    print("home page disposed");
     super.dispose();
   }
   @override
@@ -32,17 +34,15 @@ class _WorldStatesScreenState extends State<WorldStatesScreen> with TickerProvid
     StatesServices _statesServices = StatesServices();
     return Scaffold(
       body: SafeArea(
-
           child: FutureBuilder<WorldStatesModel>(
             future:_statesServices.getWorldStatesApiData(),
             builder: (context, snapshot) {
               if(snapshot.connectionState == ConnectionState.waiting){
-                return Expanded(flex:1,
-                    child: SpinKitFadingCircle(
-                      color: Colors.white,
-                      size: 50.0,
-                      controller: _controller,
-                    ));
+                return SpinKitFadingCircle(
+                  color: Colors.white,
+                  size: 50.0,
+                  controller: _controller,
+                );
               }else if(snapshot.hasError){
                 return Center(
                   child: Column(
@@ -58,7 +58,7 @@ class _WorldStatesScreenState extends State<WorldStatesScreen> with TickerProvid
                   padding: const EdgeInsets.all(15.0),
                   child: Column(
                     children: [
-                      SizedBox(height: MediaQuery.of(context).size.height * 0.03,),
+                      SizedBox(height: MediaQuery.of(context).size.height * 0.06,),
                       PieChart(dataMap:{
                         "Total":double.parse(snapshot.data!.cases!.toString()),
                         "Recovered":double.parse(snapshot.data!.recovered!.toString()),
@@ -76,7 +76,7 @@ class _WorldStatesScreenState extends State<WorldStatesScreen> with TickerProvid
                         colorList: colorList,
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.06),
+                        padding: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height * 0.02),
                         child: Card(
                           child: Column(
                             children: [
@@ -93,7 +93,7 @@ class _WorldStatesScreenState extends State<WorldStatesScreen> with TickerProvid
                       ),
                       GestureDetector(
                         onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => ,));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => CountriesListScreen(),));
                         },
                         child: Container(
                           margin: EdgeInsets.symmetric(horizontal: 10),
