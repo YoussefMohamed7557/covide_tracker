@@ -45,7 +45,7 @@ To run this project, follow these steps:
 
 Check out the demo video on YouTube to see the COVID-19 Tracker in action:
 
-[![COVID-19 Tracker Demo](<img src="images/splash.png" alt="splash image" width="300">)](https://youtu.be/a9yZbwZda3Q)
+[![COVID-19 Tracker Demo](https://i9.ytimg.com/vi_webp/a9yZbwZda3Q/mq1.webp?sqp=CMCg_bQG-oaymwEmCMACELQB8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGAgYChgMA8=&rs=AOn4CLCQLBIfxNgpu8dKyn4PXD5XgKlCsg)](https://youtu.be/a9yZbwZda3Q)
 
 ## Contributing
 
