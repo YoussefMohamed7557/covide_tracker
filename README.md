@@ -22,11 +22,11 @@ To run this project, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/covid-19-tracker.git
+    git https://github.com/YoussefMohamed7557/covide_tracker.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd covid-19-tracker
+    cd covid_tracker
     ```
 3. Install the required dependencies:
     ```bash
